@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Full Service Auto Repair | Palm Harbor, FL</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#home" aria-label="Full Service Auto Repair home">
+        <img src="logo2.PNG" alt="Full Service Auto Repair logo" class="brand-logo" />
+        <div class="brand-text">
+          <strong>Full Service Auto Repair</strong>
+          <span>727 - 935 - 1016</span>
+        </div>
+      </a>
+
+      <button class="menu-toggle" type="button" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav id="main-nav" class="main-nav" aria-label="Main navigation">
+        <a href="#home">Home</a>
+        <a href="#about">About Us</a>
+
+        <div class="nav-item has-submenu">
+          <button id="servicesMenuBtn" type="button" class="services-menu-btn" aria-expanded="false" aria-controls="servicesSubmenu">
+            Services <span class="menu-arrow">&#9662;</span>
+          </button>
+          <div id="servicesSubmenu" class="services-submenu" role="menu">
+            <a href="#service-oil"><span class="svc-ico">&#128738;</span> Oil Change</a>
+            <a href="#service-brakes"><span class="svc-ico">&#128721;</span> Brake Service</a>
+            <a href="#service-ac"><span class="svc-ico">&#10052;</span> A/C Repair</a>
+            <a href="#service-tire"><span class="svc-ico">&#128722;</span> Tire Services</a>
+            <a href="#service-diagnostics"><span class="svc-ico">&#128269;</span> Engine Diagnostics</a>
+            <a href="#service-overhaul"><span class="svc-ico">&#9881;</span> Engine Overhaul</a>
+            <a href="#service-other"><span class="svc-ico">&#10133;</span> Other</a>
+          </div>
+        </div>
+
+        <a href="#contact">Contact Us</a>
+      </nav>
+
+      <a id="headerCallBtn" class="header-call-btn" href="tel:+17279351016" aria-label="Call 727 935 1016">
+        Call 727 - 935 - 1016
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="hero section section-tone-a">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal from-left">
+          <p class="eyebrow">Trusted Auto Repair in Florida, US</p>
+          <h1>Reliable Repairs with a Professional, Customer-First Team</h1>
+          <p>
+            Full Service Auto Repair provides quality maintenance and repair solutions for families and fleet owners.
+            Transparent service, clear communication, and dependable results.
+          </p>
+          <a class="location-highlight" href="#location-map"><strong>Location:</strong> 37594 US Hwy 19 N, Palm Harbor, FL 34684</a>
+          <div class="hero-actions">
+            <button id="openBookingHero" class="btn btn-primary" type="button">Book Service</button>
+          </div>
+        </div>
+        <div class="hero-panel reveal from-right">
+          <div class="hero-stat"><strong>25+</strong><span>Years Experience</span></div>
+          <div class="hero-stat"><strong>4.9/5</strong><span>Customer Rating</span></div>
+          <div class="hero-stat"><strong>ASE</strong><span>Certified Technicians</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section section-tone-b">
+      <div class="container about-grid">
+        <div class="reveal from-left">
+          <p class="eyebrow">About Us</p>
+          <h2>Built on Trust, Backed by Skill</h2>
+          <p class="section-copy">
+            At Full Service Auto Repair, we focus on high-quality workmanship and honest communication.
+            Our technicians use modern diagnostics and proven repair methods to keep your vehicle safe and dependable.
+          </p>
+        </div>
+        <div class="about-cards">
+          <article class="mini-card reveal from-right"><h3>Certified Team</h3><p>Experienced mechanics with up-to-date technical training.</p></article>
+          <article class="mini-card reveal from-right"><h3>Transparent Pricing</h3><p>Clear recommendations and estimates before every job.</p></article>
+          <article class="mini-card reveal from-right"><h3>Reliable Turnaround</h3><p>Efficient scheduling with quality-focused delivery.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="service-oil" class="section section-tone-c service-section">
+      <div class="container service-grid">
+        <div class="reveal from-left">
+          <p class="eyebrow">Oil Change</p>
+          <h2>Protect Engine Life</h2>
+          <p class="section-copy">Premium oil and filters, matched to manufacturer recommendations for better performance and long-term reliability.</p>
+        </div>
+        <img class="reveal from-right" src="https://images.unsplash.com/photo-1625047509168-a7026f36de04?auto=format&fit=crop&w=1200&q=80" alt="Oil change service" loading="lazy" />
+      </div>
+    </section>
+
+    <section id="service-brakes" class="section section-tone-a service-section">
+      <div class="container service-grid">
+        <div class="reveal from-left">
+          <p class="eyebrow">Brake Service</p>
+          <h2>Safe, Confident Stopping</h2>
+          <p class="section-copy">Full brake inspections and replacement of pads, rotors, and related components for maximum stopping performance.</p>
+        </div>
+        <img class="reveal from-right" src="https://images.unsplash.com/photo-1487754180451-c456f719a1fc?auto=format&fit=crop&w=1200&q=80" alt="Brake repair service" loading="lazy" />
+      </div>
+    </section>
+
+    <section id="service-ac" class="section section-tone-b service-section">
+      <div class="container service-grid">
+        <div class="reveal from-left">
+          <p class="eyebrow">A/C Repair</p>
+          <h2>Comfort in Every Season</h2>
+          <p class="section-copy">A/C diagnostics, leak tests, recharge, and system repairs to keep your cabin cool and comfortable year-round.</p>
+        </div>
+        <img class="reveal from-right" src="https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=1200&q=80" alt="Car AC repair service" loading="lazy" />
+      </div>
+    </section>
+
+    <section id="service-tire" class="section section-tone-c service-section">
+      <div class="container service-grid">
+        <div class="reveal from-left">
+          <p class="eyebrow">Tire Services</p>
+          <h2>Grip, Balance, and Stability</h2>
+          <p class="section-copy">Tire checks, balancing, and rotation support to improve handling, safety, and tire lifespan.</p>
+        </div>
+        <img class="reveal from-right" src="https://images.unsplash.com/photo-1600661653561-629509216228?auto=format&fit=crop&w=1200&q=80" alt="Tire service in auto shop" loading="lazy" />
+      </div>
+    </section>
+
+    <section id="service-diagnostics" class="section section-tone-a service-section">
+      <div class="container service-grid">
+        <div class="reveal from-left">
+          <p class="eyebrow">Engine Diagnostics</p>
+          <h2>Accurate Problem Detection</h2>
+          <p class="section-copy">Advanced diagnostic tools and hands-on testing to identify warning lights and performance issues quickly.</p>
+        </div>
+        <img class="reveal from-right" src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=1200&q=80" alt="Engine diagnostics service" loading="lazy" />
+      </div>
+    </section>
+
+    <section id="service-overhaul" class="section section-tone-b service-section">
+      <div class="container service-grid">
+        <div class="reveal from-left">
+          <p class="eyebrow">Engine Overhaul</p>
+          <h2>Major Repair Expertise</h2>
+          <p class="section-copy">Comprehensive engine rebuild and overhaul services for high-mileage or severe engine problems.</p>
+        </div>
+        <img class="reveal from-right" src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=1200&q=80" alt="Engine overhaul service" loading="lazy" />
+      </div>
+    </section>
+
+    <section id="service-other" class="section section-tone-c service-section">
+      <div class="container service-grid">
+        <div class="reveal from-left">
+          <p class="eyebrow">Other</p>
+          <h2>Tell Us What You Need</h2>
+          <p class="section-copy">Need another service? Submit your request and our team will review your vehicle issue and respond quickly.</p>
+        </div>
+        <img class="reveal from-right" src="https://images.unsplash.com/photo-1517524206127-48bbd363f3d7?auto=format&fit=crop&w=1200&q=80" alt="Auto repair consultation" loading="lazy" />
+      </div>
+    </section>
+
+    <section class="section section-tone-b" id="testimonials">
+      <div class="container">
+        <div class="section-heading reveal from-left">
+          <p class="eyebrow">Testimonials</p>
+          <h2>Trusted by Families and Fleet Owners</h2>
+        </div>
+
+        <div class="testimonial-pages">
+          <div class="testimonial-page active" data-page="1">
+            <article class="testimonial-card reveal from-left"><h3>Michael R.</h3><p>Fast, honest, and professional. My brakes were repaired the same day.</p><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></article>
+            <article class="testimonial-card reveal from-right"><h3>Sarah T.</h3><p>Great communication and fair pricing. Highly recommended shop.</p><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></article>
+            <article class="testimonial-card reveal from-left"><h3>Daniel C.</h3><p>Excellent diagnostics work. They found the issue quickly and fixed it right.</p><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></article>
+          </div>
+          <div class="testimonial-page" data-page="2">
+            <article class="testimonial-card"><h3>Amanda P.</h3><p>A/C service was perfect. The team was efficient and respectful.</p><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></article>
+            <article class="testimonial-card"><h3>Kevin L.</h3><p>Reliable repair partner for our fleet vehicles.</p><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></article>
+            <article class="testimonial-card"><h3>Brian S.</h3><p>Professional process and quality work from start to finish.</p><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span></article>
+          </div>
+          <div class="testimonial-page" data-page="3">
+            <article class="testimonial-card"><h3>Jessica M.</h3><p>Quick oil change and tire check. Smooth and easy experience.</p><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></article>
+            <article class="testimonial-card"><h3>Robert H.</h3><p>Best auto repair service I have used in this area.</p><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></article>
+            <article class="testimonial-card"><h3>Lisa W.</h3><p>Very clear explanation and excellent customer support.</p><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></article>
+          </div>
+        </div>
+        <div class="pagination" aria-label="Testimonial pages">
+          <button class="page-btn active" data-target-page="1" aria-label="Page 1"></button>
+          <button class="page-btn" data-target-page="2" aria-label="Page 2"></button>
+          <button class="page-btn" data-target-page="3" aria-label="Page 3"></button>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section section-tone-a">
+      <div class="container contact-grid">
+        <div class="contact-form-wrap reveal from-left">
+          <p class="eyebrow">Contact Us</p>
+          <h2>Send Request</h2>
+          <form id="contactForm" class="contact-form" novalidate>
+            <label><span>Name</span><input name="name" type="text" required /></label>
+            <label><span>Surname</span><input name="surname" type="text" required /></label>
+            <label><span>Phone Number</span><input name="phone" type="tel" required /></label>
+            <label><span>Email</span><input name="email" type="email" required /></label>
+            <button type="submit" class="btn btn-primary">Send Request</button>
+            <p id="contactFormError" class="form-error" aria-live="polite"></p>
+          </form>
+        </div>
+
+        <div id="location-map" class="map-wrap reveal from-right">
+          <h3>37594 US Hwy 19 N, Palm Harbor, FL 34684</h3>
+          <iframe
+            title="Full Service Auto Repair Location Map"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://maps.google.com/maps?q=37594%20US%20Hwy%2019%20N%2C%20Palm%20Harbor%2C%20FL%2034684&t=&z=15&ie=UTF8&iwloc=&output=embed">
+          </iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="bookingModal" class="modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="bookingTitle">
+    <div class="modal-overlay" data-close-modal></div>
+    <div class="modal-panel">
+      <button class="modal-close" type="button" aria-label="Close" data-close-modal>&times;</button>
+      <p class="modal-step" id="modalStepText">Step 1 of 4</p>
+      <h3 id="bookingTitle">Book Your Service</h3>
+
+      <form id="bookingForm" novalidate>
+        <section class="form-step active" data-step="1">
+          <h4>Select Service</h4>
+          <div class="option-list">
+            <label><input type="radio" name="service" value="Oil Change" required /><span><span class="svc-ico">&#128738;</span> Oil Change</span></label>
+            <label><input type="radio" name="service" value="Brake Service" /><span><span class="svc-ico">&#128721;</span> Brake Service</span></label>
+            <label><input type="radio" name="service" value="A/C Repair" /><span><span class="svc-ico">&#10052;</span> A/C Repair</span></label>
+            <label><input type="radio" name="service" value="Tire Services" /><span><span class="svc-ico">&#128722;</span>Tire Services</span></label>
+            <label><input type="radio" name="service" value="Engine Diagnostics" /><span><span class="svc-ico">&#128269;</span> Engine Diagnostics</span></label>
+            <label><input type="radio" name="service" value="Engine Overhaul" /><span><span class="svc-ico">&#9881;</span> Engine Overhaul</span></label>
+            <label><input type="radio" name="service" value="Other" /><span><span class="svc-ico">&#10133;</span> Other</span></label>
+          </div>
+        </section>
+
+        <section class="form-step" data-step="2">
+          <h4>Location</h4>
+          <label class="field">
+            <span>City</span>
+            <input type="text" name="city" placeholder="Enter your city" required />
+          </label>
+        </section>
+
+        <section class="form-step" data-step="3">
+          <h4>When do you need your request completed? *</h4>
+          <div class="option-list">
+            <label><input type="radio" name="timeline" value="As soon as possible" required /><span>As soon as possible</span></label>
+            <label><input type="radio" name="timeline" value="In the next few days" /><span>In the next few days</span></label>
+            <label><input type="radio" name="timeline" value="I'm flexible" /><span>I'm flexible</span></label>
+            <label><input type="radio" name="timeline" value="Other" id="timelineOther" /><span>Other</span></label>
+          </div>
+          <label class="field hidden" id="otherDateWrap">
+            <span>Select Date</span>
+            <input type="date" name="otherDate" id="otherDate" lang="en" />
+          </label>
+        </section>
+
+        <section class="form-step" data-step="4">
+          <h4>Contact Information</h4>
+          <label class="field"><span>Name</span><input type="text" name="name" required /></label>
+          <label class="field"><span>Phone Number</span><input type="tel" name="phone" required /></label>
+          <label class="field"><span>Email</span><input type="email" name="email" required /></label>
+        </section>
+
+        <p id="formError" class="form-error" aria-live="polite"></p>
+
+        <div class="step-actions">
+          <button type="button" id="prevStep" class="btn btn-light" hidden>Back</button>
+          <button type="button" id="stepActionBtn" class="btn btn-primary">Next</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div id="successModal" class="success-modal" aria-live="polite" aria-hidden="true">
+    <div class="success-modal-card">
+      <strong>Request sent successfully</strong>
+      <p>Thank you. We will contact you soon.</p>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>Full Service Auto Repair</h3>
+        <p>Trusted professional auto repair and maintenance services in Palm Harbor, Florida.</p>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ol>
+          <li>Oil Change</li>
+          <li>Brake Service</li>
+          <li>A/C Repair</li>
+          <li>Tire Services</li>
+          <li>Engine Diagnostics</li>
+          <li>Engine Overhaul</li>
+          <li>Other</li>
+        </ol>
+      </div>
+      <div>
+        <h4>Contact & Location</h4>
+        <p>Phone: <a href="tel:+17279351016">727 - 935 - 1016</a></p>
+        <p>Email: <a href="mailto:iglibregu18@gmail.com">iglibregu18@gmail.com</a></p>
+        <p>37594 US Hwy 19 N, Palm Harbor, FL 34684</p>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>&copy; <span id="year"></span> Full Service Auto Repair. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
