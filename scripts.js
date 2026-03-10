@@ -159,10 +159,55 @@ pageButtons.forEach((btn) => {
 
 const successModal = document.getElementById("successModal");
 let successTimer = null;
+let successPreviousBodyOverflow = null;
+const FORM_SUBMIT_ENDPOINT = "https://formsubmit.co/ajax/Eagleprimeauto@gmail.com";
+const FORM_SUBMIT_FALLBACK_ENDPOINT = "https://formsubmit.co/Eagleprimeauto@gmail.com";
+
+async function sendSubmissionEmail(payload) {
+  const submissionData = {
+    ...payload,
+    _captcha: "false",
+    _template: "table"
+  };
+
+  try {
+    const response = await fetch(FORM_SUBMIT_ENDPOINT, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json"
+      },
+      body: JSON.stringify(submissionData)
+    });
+
+    const responseData = await response.json().catch(() => ({}));
+    const isExplicitFailure = responseData.success === false || responseData.success === "false";
+    if (!response.ok || isExplicitFailure) {
+      throw new Error(responseData.message || "Email submission failed.");
+    }
+    return;
+  } catch (ajaxError) {
+    const formData = new FormData();
+    Object.entries(submissionData).forEach(([key, value]) => {
+      formData.append(key, String(value ?? ""));
+    });
+
+    // Fallback for cases where CORS blocks AJAX form submission.
+    await fetch(FORM_SUBMIT_FALLBACK_ENDPOINT, {
+      method: "POST",
+      mode: "no-cors",
+      body: formData
+    });
+  }
+}
 
 function showSuccessModal() {
   if (!successModal) {
     return;
+  }
+  if (!successModal.classList.contains("show")) {
+    successPreviousBodyOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
   }
   successModal.classList.add("show");
   successModal.setAttribute("aria-hidden", "false");
@@ -172,6 +217,10 @@ function showSuccessModal() {
   successTimer = window.setTimeout(() => {
     successModal.classList.remove("show");
     successModal.setAttribute("aria-hidden", "true");
+    if (successPreviousBodyOverflow !== null) {
+      document.body.style.overflow = successPreviousBodyOverflow;
+      successPreviousBodyOverflow = null;
+    }
   }, 3000);
 }
 
@@ -280,7 +329,7 @@ if (timelineOther && otherDateWrap && otherDateInput) {
 }
 
 if (stepActionBtn) {
-  stepActionBtn.addEventListener("click", () => {
+  stepActionBtn.addEventListener("click", async () => {
     if (!validateStep(currentStep)) {
       return;
     }
@@ -291,13 +340,45 @@ if (stepActionBtn) {
       return;
     }
 
-    closeModal();
-    bookingForm.reset();
-    currentStep = 1;
-    otherDateWrap.classList.add("hidden");
-    otherDateInput.required = false;
-    updateStepUi();
-    showSuccessModal();
+    const service = bookingForm.querySelector("input[name='service']:checked")?.value || "";
+    const city = bookingForm.querySelector("input[name='city']")?.value.trim() || "";
+    const timeline = bookingForm.querySelector("input[name='timeline']:checked")?.value || "";
+    const otherDate = bookingForm.querySelector("input[name='otherDate']")?.value || "";
+    const name = bookingForm.querySelector("input[name='name']")?.value.trim() || "";
+    const phone = bookingForm.querySelector("input[name='phone']")?.value.trim() || "";
+    const email = bookingForm.querySelector("input[name='email']")?.value.trim() || "";
+
+    formError.textContent = "";
+    stepActionBtn.disabled = true;
+    stepActionBtn.textContent = "Sending...";
+
+    try {
+      await sendSubmissionEmail({
+        _subject: "New Booking Request - Full Service Auto Repair",
+        Source: "Booking Modal",
+        Service: service,
+        City: city,
+        Timeline: timeline,
+        "Other Date": otherDate || "N/A",
+        Name: name,
+        Phone: phone,
+        Email: email
+      });
+
+      closeModal();
+      bookingForm.reset();
+      currentStep = 1;
+      otherDateWrap.classList.add("hidden");
+      otherDateInput.required = false;
+      updateStepUi();
+      showSuccessModal();
+    } catch (error) {
+      formError.textContent = "We could not send your request. Please try again.";
+      console.error(error);
+    } finally {
+      stepActionBtn.disabled = false;
+      stepActionBtn.textContent = currentStep === 4 ? "Send Request" : "Next";
+    }
   });
 }
 
@@ -312,13 +393,14 @@ const contactForm = document.getElementById("contactForm");
 const contactFormError = document.getElementById("contactFormError");
 
 if (contactForm && contactFormError) {
-  contactForm.addEventListener("submit", (event) => {
+  contactForm.addEventListener("submit", async (event) => {
     event.preventDefault();
 
     const name = contactForm.querySelector("input[name='name']")?.value.trim() || "";
     const surname = contactForm.querySelector("input[name='surname']")?.value.trim() || "";
     const phone = contactForm.querySelector("input[name='phone']")?.value.trim() || "";
     const email = contactForm.querySelector("input[name='email']")?.value.trim() || "";
+    const contactSubmitButton = contactForm.querySelector("button[type='submit']");
 
     if (!name || !surname || !phone || !email) {
       contactFormError.textContent = "Please fill in all contact form fields.";
@@ -326,8 +408,33 @@ if (contactForm && contactFormError) {
     }
 
     contactFormError.textContent = "";
-    contactForm.reset();
-    showSuccessModal();
+
+    if (contactSubmitButton) {
+      contactSubmitButton.disabled = true;
+      contactSubmitButton.textContent = "Sending...";
+    }
+
+    try {
+      await sendSubmissionEmail({
+        _subject: "New Contact Request - Full Service Auto Repair",
+        Source: "Contact Form",
+        Name: name,
+        Surname: surname,
+        Phone: phone,
+        Email: email
+      });
+
+      contactForm.reset();
+      showSuccessModal();
+    } catch (error) {
+      contactFormError.textContent = "We could not send your request. Please try again.";
+      console.error(error);
+    } finally {
+      if (contactSubmitButton) {
+        contactSubmitButton.disabled = false;
+        contactSubmitButton.textContent = "Send Request";
+      }
+    }
   });
 }
 
