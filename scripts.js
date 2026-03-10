@@ -71,7 +71,7 @@ function setActiveLinkById(sectionId) {
     matched.link.classList.add("active");
   }
 
-  const serviceIds = ["service-oil", "service-brakes", "service-ac", "service-tire", "service-diagnostics", "service-overhaul", "service-other"];
+  const serviceIds = ["service-oil", "service-brakes", "service-ac", "service-diagnostics", "service-overhaul", "service-other"];
   if (servicesMenuBtn && serviceIds.includes(sectionId)) {
     servicesMenuBtn.classList.add("active");
     const activeSub = document.querySelector(`.services-submenu a[href="#${sectionId}"]`);
