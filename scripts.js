@@ -160,8 +160,8 @@ pageButtons.forEach((btn) => {
 const successModal = document.getElementById("successModal");
 let successTimer = null;
 let successPreviousBodyOverflow = null;
-const FORM_SUBMIT_ENDPOINT = "https://formsubmit.co/ajax/iglibregu00@hotmail.com";
-const FORM_SUBMIT_FALLBACK_ENDPOINT = "https://formsubmit.co/iglibregu00@hotmail.com";
+const FORM_SUBMIT_ENDPOINT = "https://formsubmit.co/ajax/Eagleprimeauto@gmail.com";
+const FORM_SUBMIT_FALLBACK_ENDPOINT = "https://formsubmit.co/Eagleprimeauto@gmail.com";
 
 async function sendSubmissionEmail(payload) {
   const submissionData = {
