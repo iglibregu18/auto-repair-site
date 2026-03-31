@@ -23,6 +23,13 @@ if (menuToggle && mainNav) {
 
 if (headerCallBtn) {
   headerCallBtn.addEventListener("click", () => {
+
+    if (typeof gtag === "function") {
+      gtag('event', 'conversion', {
+        'send_to': 'AW-17988953182/T--PCNipmpMcEN7I5oFD'
+      });
+    }
+
     window.location.href = "tel:+17279351016";
   });
 }
@@ -371,6 +378,11 @@ if (stepActionBtn) {
       otherDateWrap.classList.add("hidden");
       otherDateInput.required = false;
       updateStepUi();
+      if (typeof gtag === "function") {
+          gtag('event', 'conversion', {
+            'send_to': 'AW-17988953182/T--PCNipmpMcEN7I5oFD'
+          });
+        }
       showSuccessModal();
     } catch (error) {
       formError.textContent = "We could not send your request. Please try again.";
@@ -425,6 +437,11 @@ if (contactForm && contactFormError) {
       });
 
       contactForm.reset();
+      if (typeof gtag === "function") {
+            gtag('event', 'conversion', {
+              'send_to': 'AW-17988953182/T--PCNipmpMcEN7I5oFD'
+            });
+          }
       showSuccessModal();
     } catch (error) {
       contactFormError.textContent = "We could not send your request. Please try again.";
