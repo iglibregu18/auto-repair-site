@@ -22,24 +22,25 @@ if (menuToggle && mainNav) {
 }
 
 
-function trackCall(el, e) {
-  debugger;
-  e.preventDefault();
 
-  const url = el.href;
+const callBtn = document.getElementById("headerCallBtn");
 
-  if (typeof gtag === "function") {
-    gtag('event', 'conversion', {
-      'send_to': 'AW-17988953182/T--PCNipmpMcEN7I5oFD'
-    });
-  }
+if (callBtn) {
+  callBtn.addEventListener("click", function (e) {
+    e.preventDefault();
 
-  // hap call pas tracking
-  setTimeout(() => {
-    window.location.href = url;
-  }, 300);
+    const phoneUrl = this.href;
 
-  return false;
+    // 👉 1. hap CALL MENJËHERË (user gesture ruhet)
+    window.location.href = phoneUrl;
+
+    // 👉 2. pastaj gtag (nuk bllokon call)
+    if (typeof gtag === "function") {
+      gtag('event', 'conversion', {
+        'send_to': 'AW-17988953182/T--PCNipmpMcEN7I5oFD'
+      });
+    }
+  });
 }
 if (hasSubmenu && servicesMenuBtn) {
   servicesMenuBtn.addEventListener("click", (event) => {
