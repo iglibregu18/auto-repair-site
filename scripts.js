@@ -12,7 +12,7 @@ const menuToggle = document.querySelector(".menu-toggle");
 const mainNav = document.querySelector(".main-nav");
 const hasSubmenu = document.querySelector(".has-submenu");
 const servicesMenuBtn = document.getElementById("servicesMenuBtn");
-const headerCallBtn = document.getElementById("headerCallBtn");
+
 
 if (menuToggle && mainNav) {
   menuToggle.addEventListener("click", () => {
@@ -21,19 +21,26 @@ if (menuToggle && mainNav) {
   });
 }
 
-if (headerCallBtn) {
-  headerCallBtn.addEventListener("click", () => {
 
-    if (typeof gtag === "function") {
-      gtag('event', 'conversion', {
-        'send_to': 'AW-17988953182/T--PCNipmpMcEN7I5oFD'
-      });
-    }
+function trackCall(el, e) {
+  debugger;
+  e.preventDefault();
 
-    window.location.href = "tel:+17279351016";
-  });
+  const url = el.href;
+
+  if (typeof gtag === "function") {
+    gtag('event', 'conversion', {
+      'send_to': 'AW-17988953182/T--PCNipmpMcEN7I5oFD'
+    });
+  }
+
+  // hap call pas tracking
+  setTimeout(() => {
+    window.location.href = url;
+  }, 300);
+
+  return false;
 }
-
 if (hasSubmenu && servicesMenuBtn) {
   servicesMenuBtn.addEventListener("click", (event) => {
     event.stopPropagation();
