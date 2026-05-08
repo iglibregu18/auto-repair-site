@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 800" role="img" aria-labelledby="title desc">
+  <title id="title">Eagle Prime Auto service shop facade</title>
+  <desc id="desc">Realistic auto service shop exterior with Eagle Prime Auto signage integrated into the front facade.</desc>
+  <defs>
+    <filter id="paintShadow" x="-20%" y="-80%" width="140%" height="240%">
+      <feDropShadow dx="0" dy="1.4" stdDeviation="1.1" flood-color="#07101f" flood-opacity="0.32"/>
+    </filter>
+    <linearGradient id="paintRed" x1="0" x2="1">
+      <stop offset="0" stop-color="#b8172a"/>
+      <stop offset="0.5" stop-color="#df1f35"/>
+      <stop offset="1" stop-color="#9f1425"/>
+    </linearGradient>
+  </defs>
+  <image
+    href="https://images.unsplash.com/photo-1766637885444-2148f623d822?auto=format&amp;fit=crop&amp;fm=jpg&amp;q=82&amp;w=1400"
+    x="0"
+    y="0"
+    width="1000"
+    height="800"
+    preserveAspectRatio="xMidYMid slice"/>
+  <g transform="translate(548 219) rotate(-0.4) skewX(-4)" opacity="0.94" filter="url(#paintShadow)">
+    <text
+      x="0"
+      y="0"
+      text-anchor="middle"
+      dominant-baseline="middle"
+      font-family="Arial Narrow, Barlow Condensed, Arial, sans-serif"
+      font-size="33"
+      font-weight="800"
+      letter-spacing="2.1"
+      fill="url(#paintRed)">EAGLE PRIME AUTO</text>
+    <rect x="-153" y="19" width="306" height="3" rx="1.5" fill="#df1f35" opacity="0.62"/>
+  </g>
+</svg>

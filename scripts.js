@@ -42,6 +42,29 @@ if (callBtn) {
     }
   });
 }
+
+const otherDirectionsBtn = document.getElementById("otherDirectionsBtn");
+const otherContactBtn = document.getElementById("otherContactBtn");
+const directionsUrl = "https://www.google.com/maps/dir/?api=1&destination=37594%20US%20Hwy%2019%20N%2C%20Palm%20Harbor%2C%20FL%2034684";
+
+if (otherDirectionsBtn) {
+  otherDirectionsBtn.addEventListener("click", () => {
+    window.open(directionsUrl, "_blank", "noopener,noreferrer");
+  });
+}
+
+if (otherContactBtn) {
+  otherContactBtn.addEventListener("click", () => {
+    const contactSection = document.getElementById("contact");
+    if (!contactSection) {
+      return;
+    }
+    contactSection.scrollIntoView({ behavior: "smooth", block: "start" });
+    setActiveLinkById("contact");
+    window.setTimeout(() => animateSectionFromNav("contact"), 180);
+  });
+}
+
 if (hasSubmenu && servicesMenuBtn) {
   servicesMenuBtn.addEventListener("click", (event) => {
     event.stopPropagation();
@@ -369,7 +392,7 @@ if (stepActionBtn) {
 
     try {
       await sendSubmissionEmail({
-        _subject: "New Booking Request - Full Service Auto Repair",
+        _subject: "New Booking Request - Eagle Prime Auto Full Service Repair",
         Source: "Booking Modal",
         Service: service,
         City: city,
@@ -436,7 +459,7 @@ if (contactForm && contactFormError) {
 
     try {
       await sendSubmissionEmail({
-        _subject: "New Contact Request - Full Service Auto Repair",
+        _subject: "New Contact Request - Eagle Prime Auto Full Service Repair",
         Source: "Contact Form",
         Name: name,
         Surname: surname,
